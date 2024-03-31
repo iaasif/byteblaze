@@ -17,11 +17,13 @@ const Bookmarks = () => {
 
   if (blogs.length < 1) {
     return (
+      
       <EmptyState
         message='No Bookmarks Found'
         address='/blogs'
         label='Browse Blogs'
       />
+
     )
   }
   return (

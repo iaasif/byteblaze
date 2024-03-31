@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, Outlet, useLoaderData } from 'react-router-dom'
 import { MdBookmarkAdd } from 'react-icons/md'
 import { saveBlog } from '../utils'
+import { Helmet } from 'react-helmet-async'
 const Blog = () => {
   const [tabIndex, setTabIndex] = useState(0)
   const blog = useLoaderData()
@@ -18,6 +19,7 @@ const Blog = () => {
 
   return (
     <div className='max-w-3xl px-6 py-16 mx-auto space-y-12 overflow-hidden'>
+      <Helmet> <title> Byte blaze || Blog</title></Helmet>
       <article className='space-y-8 '>
         <div className='space-y-6'>
           <h1 className='text-4xl font-bold md:tracking-tight md:text-5xl'>
@@ -37,9 +39,8 @@ const Blog = () => {
             <Link
               to={``}
               onClick={() => setTabIndex(0)}
-              className={`flex cursor-pointer items-center flex-shrink-0 px-5 py-3 space-x-2 ${
-                tabIndex === 0 ? 'border border-b-0' : 'border-b'
-              }  `}
+              className={`flex cursor-pointer items-center flex-shrink-0 px-5 py-3 space-x-2 ${tabIndex === 0 ? 'border border-b-0' : 'border-b'
+                }  `}
             >
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -58,9 +59,8 @@ const Blog = () => {
             <Link
               to={`author`}
               onClick={() => setTabIndex(1)}
-              className={`flex cursor-pointer items-center flex-shrink-0 px-5 py-3 space-x-2 ${
-                tabIndex === 1 ? 'border border-b-0' : 'border-b'
-              }  `}
+              className={`flex cursor-pointer items-center flex-shrink-0 px-5 py-3 space-x-2 ${tabIndex === 1 ? 'border border-b-0' : 'border-b'
+                }  `}
             >
               <svg
                 xmlns='http://www.w3.org/2000/svg'

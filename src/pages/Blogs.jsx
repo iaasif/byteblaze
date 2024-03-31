@@ -1,6 +1,7 @@
 import { Link, useLoaderData, useNavigation } from 'react-router-dom'
 import BlogCard from '../components/BlogCard'
 import Loader from '../components/Loader'
+import { Helmet } from 'react-helmet-async'
 const Blogs = () => {
   const navigation = useNavigation()
 
@@ -8,6 +9,7 @@ const Blogs = () => {
   if (navigation.state === 'loading') return <Loader />
   return (
     <section className='  px-4 sm:px-8 lg:px-12 py-8'>
+      <Helmet> <title> Byte blaze || Blogs</title></Helmet>
       <div className='container max-w-6xl py-6 mx-auto space-y-6 sm:space-y-12'>
         <Link
           to={`/blog/${blogs[0]?.id}`}
